@@ -782,34 +782,54 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
 
 <hr class="divider">
 
-<!-- ===== GALERIA DE FOTOS ===== -->
+<!-- ===== GALERIA DE FOTOS (CARROSSEL) ===== -->
 <section id="galeria">
   <div class="container">
     <div class="section-head center fade-up">
       <span class="eyebrow center">Por dentro do TEME</span>
       <h2>Encontros, aulas e <span class="accent">bastidores</span></h2>
-      <p class="lead">Espaço reservado para fotos reais das turmas, dos encontros e dos professores.</p>
+      <p class="lead">Momentos reais das turmas, dos encontros e dos professores.</p>
     </div>
-    <!-- TROCA: cada .media-frame vira <img>. Mantenha as classes g-tall / g-wide para o mosaico -->
-    <div class="gallery fade-up" data-delay="1">
-      <div class="media-frame glass g-tall">
-        <div class="media-ph"><div class="grid-overlay"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="mp-label">Foto 1</span></div>
-      </div>
-      <div class="media-frame glass g-wide">
-        <div class="media-ph"><div class="grid-overlay"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="mp-label">Foto 2 (panorâmica)</span></div>
-      </div>
-      <div class="media-frame glass">
-        <div class="media-ph"><div class="grid-overlay"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="mp-label">Foto 3</span></div>
-      </div>
-      <div class="media-frame glass">
-        <div class="media-ph"><div class="grid-overlay"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="mp-label">Foto 4</span></div>
-      </div>
-      <div class="media-frame glass g-wide">
-        <div class="media-ph"><div class="grid-overlay"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="mp-label">Foto 5 (panorâmica)</span></div>
-      </div>
+  </div>
+  <!-- carrossel full-width -->
+  <div class="carousel-wrap fade-up" data-delay="1">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="car-slide"><img src="galeria-1.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-2.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-3.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-4.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-5.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-6.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-7.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-8.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-9.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <!-- duplicatas para loop infinito -->
+      <div class="car-slide"><img src="galeria-1.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-2.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-3.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-4.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-5.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-6.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-7.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-8.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
+      <div class="car-slide"><img src="galeria-9.webp" alt="TEME 2027" style="width:100%;height:100%;object-fit:cover;border-radius:18px"></div>
     </div>
   </div>
 </section>
+
+<style>
+.carousel-wrap{overflow:hidden;width:100%;padding:0 0 8px;cursor:grab;user-select:none}
+.carousel-wrap:active{cursor:grabbing}
+.carousel-track{display:flex;gap:16px;width:max-content;animation:carouselMove 28s linear infinite}
+.carousel-track:hover{animation-play-state:paused}
+.car-slide{flex-shrink:0;width:280px;height:380px;border-radius:18px;overflow:hidden;position:relative}
+.car-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(160deg,rgba(28,8,10,.96),rgba(10,10,12,.96))}
+.car-ph svg{width:40px;height:40px;color:rgba(245,22,39,.45)}
+.car-ph span{font-size:.72rem;letter-spacing:1.5px;color:var(--gray-mid);text-transform:uppercase}
+.car-ph .grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(245,22,39,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(245,22,39,.05) 1px,transparent 1px);background-size:34px 34px}
+@keyframes carouselMove{from{transform:translateX(0)}to{transform:translateX(calc(-296px * 6))}}
+@media(max-width:768px){.car-slide{width:220px;height:300px}@keyframes carouselMove{from{transform:translateX(0)}to{transform:translateX(calc(-236px * 6))}}}
+</style>
 
 <hr class="divider">
 
