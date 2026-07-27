@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TEME 2027 | Preparatório para o Título de Especialista em Medicina de Emergência</title>
-<meta name="description" content="O preparatório que mais aprova emergencistas no Brasil. Professores titulados na prova, banco de questões, simulados e mentorias. Três modalidades: Intensivo, MasterClass e Premium (com pós-graduação)." />
+<meta name="description" content="O preparatório que mais aprova emergencistas no Brasil. Professores titulados na prova, banco de questões, simulados e questões comentadas por especialistas. Três modalidades: Intensivo, MasterClass e Premium (com pós-graduação)." />
 <meta name="theme-color" content="#040405" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23040405'/%3E%3Cpath d='M3 17h5l2-7 3 13 3-9 2 3h8' fill='none' stroke='%23F51627' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -167,11 +167,13 @@ section{position:relative;padding:clamp(72px,9vw,124px) 0;z-index:1}
 @keyframes sheen{to{background-position:-220% center}}
 .hero-sub{font-size:clamp(1.08rem,1.6vw,1.34rem);font-weight:400;color:var(--gray-light);margin:0 auto 32px;max-width:660px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:34px}
-.hero-proof{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,44px);align-items:flex-start;justify-content:center;margin-bottom:clamp(44px,6vw,64px)}
-.hero-proof .hp{display:flex;flex-direction:column;align-items:center;gap:3px;max-width:160px}
+.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,155px));gap:clamp(14px,2.4vw,30px);align-items:start;justify-content:center;margin-bottom:clamp(44px,6vw,64px)}
+.hero-proof .hp{display:flex;flex-direction:column;align-items:center;gap:3px;position:relative}
+/* divisórias verticais entre as colunas (desktop) */
+.hero-proof .hp:not(:first-child)::before{content:"";position:absolute;left:calc(-1 * clamp(7px,1.2vw,15px));top:6px;height:46px;width:1px;background:rgba(245,22,39,.3)}
 .hero-proof .hp b{font-family:var(--font-head);font-size:clamp(2.1rem,4vw,2.9rem);line-height:1;color:var(--red);font-weight:800;text-shadow:0 0 22px rgba(245,22,39,.3)}
 .hero-proof .hp span{font-size:.82rem;color:var(--gray-light);line-height:1.25}
-.hero-proof .vr{width:1px;align-self:center;height:46px;background:rgba(245,22,39,.3)}
+.hero-proof .vr{display:none}
 
 /* moldura de mídia (usada também na galeria / professores / premium) */
 .media-frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5}
@@ -399,6 +401,8 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
 @media(max-width:1024px){
   .hero-grid{grid-template-columns:1fr;max-width:680px;margin:0 auto}
   .hero-visual{justify-self:center;max-width:460px;margin-top:20px}
+  .hero-proof{grid-template-columns:repeat(2,minmax(0,155px));gap:clamp(16px,3vw,26px) clamp(20px,5vw,34px)}
+  .hero-proof .hp:nth-child(5)::before{display:none}
   .stats-grid{grid-template-columns:1fr}
   .feat-grid{grid-template-columns:1fr 1fr}
   .feat-hero{grid-template-columns:auto 1fr;gap:20px}
@@ -492,8 +496,8 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
   <div class="container">
     <div class="hero-inner">
       <span class="hero-kicker fade-up"><i></i>Preparatório nº 1 em Medicina de Emergência</span>
-      <h1 class="fade-up" data-delay="1">O preparatório que <span class="accent">mais aprova</span><br>emergencistas no Brasil</h1>
-      <p class="hero-sub fade-up" data-delay="2">Escolha o preparatório que entende a sua rotina, o seu ritmo e os seus desafios — e que coloca você mais perto do título.</p>
+      <h1 class="fade-up" data-delay="1">O preparatório que <span class="accent">mais aprova</span><br>emergencistas no Brasil!</h1>
+      <p class="hero-sub fade-up" data-delay="2">Escolha o preparatório que entende a sua rotina, o seu ritmo e os seus desafios e coloca você mais perto do título.</p>
       <div class="hero-cta fade-up" data-delay="3">
         <a href="#modalidades" class="btn btn-primary btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Quero garantir minha vaga</a>
         <a href="#video" class="btn btn-glass"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>Assistir apresentação</a>
@@ -504,6 +508,8 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         <div class="hp"><b data-count="100" data-suffix="%">0</b><span>de acerto na prova prática</span></div>
         <div class="vr"></div>
         <div class="hp"><b data-count="100" data-suffix="%">0</b><span>dos professores titulados</span></div>
+        <div class="vr"></div>
+        <div class="hp"><b data-count="100" data-suffix="+">0</b><span>aulas atualizadas</span></div>
       </div>
 
     </div>
@@ -513,8 +519,8 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
 <!-- ===== MARQUEE ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Professores titulados na prova</span><span>+3000 flashcards</span><span>Banco de questões comentadas</span><span>Simulados online e presencial</span><span>Mentoria personalizada</span><span>Quadro de desempenho</span>
-    <span>Professores titulados na prova</span><span>+3000 flashcards</span><span>Banco de questões comentadas</span><span>Simulados online e presencial</span><span>Mentoria personalizada</span><span>Quadro de desempenho</span>
+    <span>Professores titulados na prova</span><span>+3000 flashcards</span><span>Banco de questões comentadas</span><span>Simulados online e presencial</span><span>Questões comentadas por especialistas</span><span>Painel de desempenho</span>
+    <span>Professores titulados na prova</span><span>+3000 flashcards</span><span>Banco de questões comentadas</span><span>Simulados online e presencial</span><span>Questões comentadas por especialistas</span><span>Painel de desempenho</span>
   </div>
 </div>
 
@@ -524,7 +530,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
     <div class="section-head center fade-up">
       <span class="eyebrow center">Resultados que falam por nós</span>
       <h2>Números que <span class="accent">comprovam o método</span></h2>
-      <p class="lead">Não é promessa — é histórico. Veja o que os alunos do Talks conquistam na prova de título.</p>
+      <p class="lead">Não é promessa: é histórico. Veja o que os alunos do Talks conquistam na prova de título.</p>
     </div>
     <div class="stats-grid">
       <div class="stat glass fade-up" data-delay="1">
@@ -540,9 +546,10 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
       <div class="stat glass fade-up" data-delay="3">
         <div class="num"><span data-count="100">0</span><small>%</small></div>
         <div class="st-label">Professores titulados</div>
-        <div class="st-sub">Todos os nossos professores são titulados na prova — algo que nem todo curso oferece.</div>
+        <div class="st-sub">Todos os nossos professores são titulados na prova, algo que nem todo curso oferece.</div>
       </div>
     </div>
+    <p class="fade-up" style="text-align:center;font-size:.82rem;color:var(--gray-mid);letter-spacing:.4px;margin-top:26px">* Dados referentes ao ano de 2025.</p>
   </div>
 </section>
 
@@ -586,7 +593,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         <div class="fh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
         <div>
           <h3>Todos os professores são titulados na prova</h3>
-          <p>Você aprende com quem já enfrentou e passou exatamente pela prova que você vai fazer. É experiência real de quem conhece a banca por dentro — um diferencial que nem todo curso pode oferecer.</p>
+          <p>Você aprende com quem já enfrentou e passou exatamente pela prova que você vai fazer. É experiência real de quem conhece a banca por dentro: um diferencial que nem todo curso pode oferecer.</p>
         </div>
         <div class="fh-badge"><b>100%</b>do corpo docente titulado</div>
       </div>
@@ -594,12 +601,12 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
       <div class="feat glass fade-up" data-delay="1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg></div>
         <h3>Aulas com temas atualizados</h3>
-        <p>Conteúdo revisado a cada edição, com tudo o que você precisa para a sua aprovação — alinhado ao que realmente cai na prova.</p>
+        <p>Conteúdo revisado a cada edição, com tudo o que você precisa para a sua aprovação, alinhado ao que realmente cai na prova.</p>
       </div>
       <div class="feat glass fade-up" data-delay="2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3>Aulas objetivas</h3>
-        <p>Direto ao ponto, sem enrolação. Aulas pensadas para render no seu tempo — ideais para a rotina de quem já está na linha de frente.</p>
+        <p>Direto ao ponto, sem enrolação. Aulas pensadas para render no seu tempo, ideais para a rotina de quem já está na linha de frente.</p>
       </div>
       <div class="feat glass fade-up" data-delay="3">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
@@ -609,12 +616,12 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
     </div>
 
     <div class="mini-feats fade-up" data-delay="2">
-      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><b>+80 aulas</b></div>
+      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><b>+ de 100 aulas</b></div>
       <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg><b>+3000 flashcards</b></div>
       <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><b>Banco de questões</b></div>
       <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg><b>Simulados</b></div>
-      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg><b>Mentorias</b></div>
-      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><b>Quadro de desempenho</b></div>
+      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg><b>Questões comentadas por especialistas</b></div>
+      <div class="mini-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><b>Painel de desempenho</b></div>
     </div>
   </div>
 </section>
@@ -630,7 +637,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         <div class="pg-content">
           <span class="pg-kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2l2.4 5.4L20 8.2l-4 4 1 5.8L12 15.3 7 18l1-5.8-4-4 5.6-.8L12 2z"/></svg>Novidade 2027 · Exclusivo do Premium</span>
           <h2>No Premium, você ainda <span class="accent">ganha um a mais</span></h2>
-          <p class="lead">No TEME Premium, além de toda a preparação para a prova, você recebe dois diferenciais que vão além do curso. Você se prepara para o título — e termina com algo a mais na bagagem.</p>
+          <p class="lead">No TEME Premium, além de toda a preparação para a prova, você recebe dois diferenciais que vão além do curso. Você se prepara para o título e termina com algo a mais na bagagem.</p>
           <div class="pg-highlights">
             <div class="pg-hl">
               <div class="pg-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
@@ -726,8 +733,8 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Quest: encontros de discussão e resolução estratégica de questões</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 simulados do TEME Quest: 1 presencial + 3 online</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Painel de desempenho individual</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Teórica intensiva — presencial em São Paulo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Prática com treinamento hands-on — presencial em São Paulo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Teórica intensiva: presencial em São Paulo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Prática com treinamento hands-on: presencial em São Paulo</li>
           <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 encontros presenciais exclusivos em São Paulo</b></li>
           <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 simulados presenciais na programação</b></li>
           <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>Certificado de Pós-Graduação</b></li>
@@ -838,46 +845,42 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
   <div class="container">
     <div class="section-head center fade-up">
       <span class="eyebrow center">Corpo docente</span>
-      <h2>Aprenda com quem é <span class="accent">titulado na prova</span></h2>
-      <p class="lead">Todos os nossos professores conquistaram o título. Eles sabem exatamente o que você vai enfrentar.</p>
+      <h2>Aprenda com quem é <span class="accent">especialista em emergência</span></h2>
+      <p class="lead">Todos os nossos professores são especialistas em Medicina de Emergência. Eles sabem exatamente o que você vai enfrentar.</p>
     </div>
     <!-- TROCA: troque o ícone do .prof-photo por <img src="prof.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">. Ajuste nomes e RQE. -->
     <div class="profs-grid">
       <div class="prof glass fade-up" data-delay="1">
         <div class="prof-photo"><img src="prof-khalil.webp" alt="Dr. Khalil Feitosa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dr. Khalil Feitosa</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulado na prova</span></div>
+        <div class="prof-info"><b>Dr. Khalil Feitosa</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="2">
         <div class="prof-photo"><img src="prof-patricia.webp" alt="Dra. Patricia Lopes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dra. Patricia Lopes</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulada na prova</span></div>
+        <div class="prof-info"><b>Dra. Patricia Lopes</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="3">
         <div class="prof-photo"><img src="prof-nicole.webp" alt="Dra. Nicole Pinheiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dra. Nicole Pinheiro</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulada na prova</span></div>
+        <div class="prof-info"><b>Dra. Nicole Pinheiro</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="4">
         <div class="prof-photo"><img src="prof-juan.webp" alt="Dr. Juan Valdivia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dr. Juan Valdivia</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulado na prova</span></div>
+        <div class="prof-info"><b>Dr. Juan Valdivia</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="1">
         <div class="prof-photo"><img src="prof-tayna.webp" alt="Dra. Tayna Wandeur" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dra. Tayna Wandeur</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulada na prova</span></div>
+        <div class="prof-info"><b>Dra. Tayna Wandeur</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="2">
         <div class="prof-photo"><img src="prof-bruno.png" alt="Dr. Bruno Ribeiro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dr. Bruno Ribeiro</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulado na prova</span></div>
+        <div class="prof-info"><b>Dr. Bruno Ribeiro</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="3">
         <div class="prof-photo"><img src="prof-thays.webp" alt="Dra. Thays Gomes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dra. Thays Gomes</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulada na prova</span></div>
+        <div class="prof-info"><b>Dra. Thays Gomes</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
       <div class="prof glass fade-up" data-delay="4">
-        <div class="prof-photo"><img src="prof-guilherme.webp" alt="Dr. Guilherme Correia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dr. Guilherme Correia</b><span class="rqe">RQE · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulado na prova</span></div>
-      </div>
-      <div class="prof glass fade-up" data-delay="1">
         <div class="prof-photo"><img src="prof-thais.webp" alt="Dra. Thaís Leão" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
-        <div class="prof-info"><b>Dra. Thaís Leão</b><span class="rqe">RQE 14614 · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Titulada na prova</span></div>
+        <div class="prof-info"><b>Dra. Thaís Leão</b><span class="rqe">RQE 14614 · Medicina de Emergência</span><span class="titled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Especialista em Medicina de Emergência</span></div>
       </div>
     </div>
   </div>
