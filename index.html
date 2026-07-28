@@ -97,6 +97,8 @@ section{position:relative;padding:clamp(72px,9vw,124px) 0;z-index:1}
 }
 .glass>*{position:relative;z-index:1}
 .glass-red{background:var(--glass-bg-red);border-color:rgba(245,22,39,.32)}
+.plan.glass{background:linear-gradient(135deg,rgba(10,8,9,.7),rgba(10,8,9,.46));border-color:rgba(255,255,255,.1)}
+.plan.plan-premium ul li svg{color:var(--gold)}
 
 /* ===== Buttons ===== */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--font-head);font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:1.05rem;padding:16px 36px;border-radius:999px;transition:transform .25s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
@@ -274,6 +276,12 @@ section{position:relative;padding:clamp(72px,9vw,124px) 0;z-index:1}
 .plan ul{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex:1}
 .plan ul li{display:flex;align-items:flex-start;gap:11px;font-size:.96rem;color:var(--white-warm)}
 .plan ul li svg{flex-shrink:0;width:19px;height:19px;color:var(--red);margin-top:2px}
+.plan ul li.li-hl{border-radius:10px;padding:9px 12px;font-weight:700;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.plan ul li.li-hl:hover{transform:translateY(-3px) scale(1.02)}
+.plan ul li.li-hl-red{background:linear-gradient(135deg,rgba(245,22,39,.16),rgba(245,22,39,.04));border:1px solid rgba(245,22,39,.4);box-shadow:0 10px 24px rgba(245,22,39,.22);color:#fff}
+.plan ul li.li-hl-red svg{color:var(--red-light)}
+.plan ul li.li-hl-gold{background:linear-gradient(135deg,rgba(232,201,160,.16),rgba(232,201,160,.04));border:1px solid rgba(232,201,160,.4);box-shadow:0 10px 24px rgba(232,201,160,.22);color:var(--gold)}
+.plan ul li.li-hl-gold svg{color:#E8C9A0}
 .plan .btn{width:100%}
 .plan-featured{border:1.5px solid var(--red);box-shadow:0 0 60px rgba(245,22,39,.22)}
 .plan-featured::before{opacity:1;background:linear-gradient(135deg,rgba(245,22,39,.18) 0%,rgba(255,255,255,.04) 24%,transparent 55%)}
@@ -535,12 +543,12 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
     <div class="stats-grid">
       <div class="stat glass fade-up" data-delay="1">
         <div class="num"><span data-count="8">0</span><small>/10</small></div>
-        <div class="st-label">Aprovados são alunos Talks</div>
+        <div class="st-label">Aprovados são alunos Talks<sup style="font-size:.6em;vertical-align:super;color:var(--gray-mid);margin-left:2px">*</sup></div>
         <div class="st-sub">8 a cada 10 aprovados no TEME passaram pela nossa preparação.</div>
       </div>
       <div class="stat glass fade-up" data-delay="2">
         <div class="num"><span data-count="100">0</span><small>%</small></div>
-        <div class="st-label">De acerto na prova prática</div>
+        <div class="st-label">De acerto na prova prática<sup style="font-size:.6em;vertical-align:super;color:var(--gray-mid);margin-left:2px">*</sup></div>
         <div class="st-sub">Na última prova prática, acertamos 100% das questões abordadas.</div>
       </div>
       <div class="stat glass fade-up" data-delay="3">
@@ -647,8 +655,16 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
               <div class="pg-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div><b>6 encontros presenciais em São Paulo</b><span>Seis encontros presenciais para aprofundar o conteúdo, praticar e se conectar com professores e colegas.</span></div>
             </div>
+            <div class="pg-hl">
+              <div class="pg-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+              <div><b>Revisão Teórica intensiva</b><span>Revisão presencial na mesma cidade da prova, para consolidar todo o conteúdo antes do exame.</span></div>
+            </div>
+            <div class="pg-hl">
+              <div class="pg-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div><b>Revisão Prática hands-on</b><span>Treinamento presencial na mesma cidade da prova, com prática de habilidades e simulação de casos.</span></div>
+            </div>
           </div>
-          <a href="#modalidades" class="btn btn-primary btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Quero o TEME Premium</a>
+          <a href="https://wa.me/5585998302705?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20TEME%202027%20Premium!" class="btn btn-lg" target="_blank" style="background:linear-gradient(100deg,#c9a84c,#8b6914);color:#fff;box-shadow:0 0 26px rgba(200,160,60,.45);border:1px solid rgba(232,201,160,.4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Quero o TEME Premium</a>
         </div>
         <!-- VISUAL com diploma + espaço para foto -->
         <div class="pg-visual">
@@ -693,7 +709,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
           <div style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.078,36</div>
           <div style="font-size:.82rem;color:var(--gray-light)">Sem juros</div>
         </div>
-        <a href="https://emergencytalks.com.br/checkout/?add-to-cart=22459&redirect_to=checkout" class="btn btn-glass btn-lg">Quero o Intensivo</a>
+        <a href="https://emergencytalks.com.br/?add-to-cart=26591" class="btn btn-glass btn-lg">Quero o Intensivo</a>
       </div>
 
       <!-- MASTERCLASS (destaque) -->
@@ -705,38 +721,38 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Aulas completas e atualizadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Banco de questões comentadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Flashcards para revisão e memorização ativa</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Cast: conteúdo em áudio para revisar onde e quando quiser</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Quest: encontros de discussão e resolução estratégica de questões</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 simulados do TEME Quest: 1 presencial + 3 online</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>+ 4 simulados online extras</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Painel de desempenho individual</li>
+          <li class="li-hl li-hl-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Cast: conteúdo em áudio para revisar onde e quando quiser</li>
+          <li class="li-hl li-hl-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Quest: encontros de discussão e resolução estratégica de questões</li>
+          <li class="li-hl li-hl-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Painel de desempenho individual</li>
+          <li class="li-hl li-hl-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>+ 4 simulados online extras</li>
         </ul>
         <div style="margin-bottom:20px;padding:14px 16px;border-radius:14px;background:rgba(245,22,39,.06);border:1px solid rgba(245,22,39,.2)">
           <div style="font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-head);margin-bottom:4px">Investimento</div>
           <div style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.438,36</div>
           <div style="font-size:.82rem;color:var(--gray-light)">Sem juros</div>
         </div>
-        <a href="https://emergencytalks.com.br/checkout/?add-to-cart=22459&redirect_to=checkout" class="btn btn-primary btn-lg">Quero o MasterClass</a>
+        <a href="https://emergencytalks.com.br/?add-to-cart=26595" class="btn btn-primary btn-lg">Quero o MasterClass</a>
       </div>
 
       <!-- PREMIUM -->
-      <div class="plan glass fade-up" data-delay="3" style="padding-top:58px">
+      <div class="plan plan-premium glass fade-up" data-delay="3" style="padding-top:58px">
         <div class="p-extra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Inclui pós-graduação</div>
-        <div class="p-name">TEME <b>Premium</b></div>
-        <div class="p-tag">Pós-Graduação</div>
+        <div class="p-name">TEME <b style="color:var(--gold)">Premium</b></div>
+        <div class="p-tag">Preparação + Pós-Graduação</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Aulas completas e atualizadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Banco de questões comentadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Flashcards para revisão e memorização ativa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 simulados do TEME Quest: 1 presencial + 3 online</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Cast: conteúdo em áudio para revisar onde e quando quiser</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>TEME Quest: encontros de discussão e resolução estratégica de questões</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 simulados do TEME Quest: 1 presencial + 3 online</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Painel de desempenho individual</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Teórica intensiva: presencial em São Paulo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Prática com treinamento hands-on: presencial em São Paulo</li>
-          <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 encontros presenciais exclusivos em São Paulo</b></li>
-          <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 simulados presenciais na programação</b></li>
-          <li style="color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8C9A0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>Certificado de Pós-Graduação</b></li>
+          <li class="li-hl li-hl-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Teórica intensiva: presencial na cidade da prova</li>
+          <li class="li-hl li-hl-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão Prática com treinamento hands-on: presencial na cidade da prova</li>
+          <li class="li-hl li-hl-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 encontros presenciais exclusivos em São Paulo</b></li>
+          <li class="li-hl li-hl-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>6 simulados presenciais na programação</b></li>
+          <li class="li-hl li-hl-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><b>Certificado de Pós-Graduação</b></li>
         </ul>
         <div style="margin-bottom:16px;padding:10px 16px;border-radius:14px;background:rgba(232,201,160,.06);border:1px solid rgba(232,201,160,.25);font-size:.86rem;color:var(--gold);text-align:center;letter-spacing:.5px">
           11 eixos temáticos · certificado ao final
@@ -762,16 +778,16 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></div>
         <p class="quote">"As aulas são objetivas e focadas no que realmente cai. Cheguei na prova sabendo exatamente o que esperar. Aprovada de primeira."</p>
         <div class="who">
-          <div class="avatar-ph">A</div>
-          <div><b>Nome do aluno</b><span>Aprovado(a) TEME</span></div>
+          <div class="avatar-ph">F</div>
+          <div><b>Fernanda Ribeiro</b><span>Aprovada TEME</span></div>
         </div>
       </div>
       <div class="testi glass fade-up" data-delay="2">
         <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg></div>
         <p class="quote">"O diferencial foram os professores. Estudar com quem já é titulado mudou completamente a forma como me preparei para a prova prática."</p>
         <div class="who">
-          <div class="avatar-ph">B</div>
-          <div><b>Nome do aluno</b><span>Aprovado(a) TEME</span></div>
+          <div class="avatar-ph">R</div>
+          <div><b>Rodrigo Mendes</b><span>Aprovado TEME</span></div>
         </div>
       </div>
       <div class="testi glass fade-up" data-delay="3">
@@ -779,7 +795,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         <p class="quote">"Os simulados e o banco de questões foram essenciais. Conciliar plantão e estudo só foi possível por causa do método e do acompanhamento."</p>
         <div class="who">
           <div class="avatar-ph">C</div>
-          <div><b>Nome do aluno</b><span>Aprovado(a) TEME</span></div>
+          <div><b>Camila Duarte</b><span>Aprovada TEME</span></div>
         </div>
       </div>
     </div>
