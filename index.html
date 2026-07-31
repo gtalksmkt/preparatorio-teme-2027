@@ -683,7 +683,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         </ul>
         <div style="margin-bottom:20px;padding:14px 16px;border-radius:14px;background:rgba(245,22,39,.06);border:1px solid rgba(245,22,39,.2)">
           <div style="font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-head);margin-bottom:4px">Investimento</div>
-          <div style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.078,36</div>
+          <div id="price-intensivo" style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.078,36</div>
           <div style="font-size:.82rem;color:var(--gray-light)">Sem juros</div>
         </div>
         <a href="https://emergencytalks.com.br/?add-to-cart=26591" class="btn btn-glass btn-lg">Quero o Intensivo</a>
@@ -706,7 +706,7 @@ footer{background:#040405;border-top:1px solid rgba(245,22,39,.18);padding:46px 
         </ul>
         <div style="margin-bottom:20px;padding:14px 16px;border-radius:14px;background:rgba(245,22,39,.06);border:1px solid rgba(245,22,39,.2)">
           <div style="font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-head);margin-bottom:4px">Investimento</div>
-          <div style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.438,36</div>
+          <div id="price-master" style="font-family:var(--font-head);font-size:1.5rem;color:var(--white);font-weight:800">6x de R$ 1.438,36</div>
           <div style="font-size:.82rem;color:var(--gray-light)">Sem juros</div>
         </div>
         <a href="https://emergencytalks.com.br/?add-to-cart=26595" class="btn btn-primary btn-lg">Quero o MasterClass</a>
@@ -1062,6 +1062,29 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if(!isOpen){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
   });
 });
+
+// ===== Virada de lotes (preço exibido nos cards) =====
+// Troca automática à meia-noite de Brasília (UTC-3) em cada data de lote.
+// O HTML já traz o lote Pré-lançamento; abaixo estão apenas os lotes futuros
+// (ordem do mais novo para o mais antigo — usa o primeiro cuja data já passou).
+(function(){
+  var tiers = [
+    { start: Date.UTC(2026,10,1,3,0,0), intensivo:"1.467,10", master:"1.956,88" }, // 3º Lote — 01/11/2026
+    { start: Date.UTC(2026, 9,1,3,0,0), intensivo:"1.358,43", master:"1.811,92" }, // 2º Lote — 01/10/2026
+    { start: Date.UTC(2026, 8,1,3,0,0), intensivo:"1.257,80", master:"1.677,71" }, // 1º Lote — 01/09/2026
+    { start: Date.UTC(2026, 7,1,3,0,0), intensivo:"1.164,63", master:"1.553,43" }  // Lançamento — 01/08/2026
+  ];
+  var now = Date.now();
+  var iEl = document.getElementById('price-intensivo');
+  var mEl = document.getElementById('price-master');
+  for(var i=0;i<tiers.length;i++){
+    if(now >= tiers[i].start){
+      if(iEl) iEl.textContent = "6x de R$ " + tiers[i].intensivo;
+      if(mEl) mEl.textContent = "6x de R$ " + tiers[i].master;
+      break;
+    }
+  }
+})();
 </script>
 </body>
 </html>
